@@ -42,7 +42,7 @@ nav {
     justify-content: center;
     align-items: center;
     color: black;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('/images/flowershop.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('../images/flowershop.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

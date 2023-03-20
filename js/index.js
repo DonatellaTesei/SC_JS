@@ -2,7 +2,7 @@
 
 const flowers = [{
         name: "Rose",
-        image: "/images/rose.jpg",
+        image: "./images/rose.jpg",
         description: "long stem, deep pink",
         symbolism: "gentleness, admiration, gratitude.",
         price: 3.50,
@@ -10,7 +10,7 @@ const flowers = [{
     },
     {
         name: "Buttercup",
-        image: "/images/ranunkeln.jpg",
+        image: "./images/ranunkeln.jpg",
         description: "medium-lenght stem, purple",
         symbolism: "playfulness, childishness, charm, and humility.",
         price: 2.50,
@@ -18,7 +18,7 @@ const flowers = [{
     },
     {
         name: "Peony",
-        image: "/images/peonies.jpg",
+        image: "./images/peonies.jpg",
         description: "long stem, pale pink",
         symbolism: "bashfulness, good luck, compassion.",
         price: 4.20,
@@ -26,7 +26,7 @@ const flowers = [{
     },
     {
         name: "Tulip",
-        image: "/images/tulips.jpg",
+        image: "./images/tulips.jpg",
         description: "medium-length stem, pink",
         symbolism: "affection, caring, good wishes, and love.",
         price: 2.30,
@@ -35,7 +35,7 @@ const flowers = [{
 
     {
         name: "Tulip",
-        image: "/images/tulips_striped.jpg",
+        image: "./images/tulips_striped.jpg",
         description: "long stem, white, magenta-striped",
         symbolism: "a lover’s beautiful eyes",
         price: 4.00,
@@ -44,7 +44,7 @@ const flowers = [{
 
     {
         name: "Sunflower",
-        image: "/images/sunflower.jpg",
+        image: "./images/sunflower.jpg",
         description: "long stem",
         symbolism: "loyalty, adoration",
         price: 1.50,
@@ -52,7 +52,7 @@ const flowers = [{
     },
     {
         name: "Begonia",
-        image: "/images/begonia.jpg",
+        image: "./images/begonia.jpg",
         description: "10 cm diameter-vase, red",
         symbolism: "caution and consideration, good communication",
         price: 8.50,
@@ -60,7 +60,7 @@ const flowers = [{
     },
     {
         name: "Bouquet romantic",
-        image: "/images/bouquet1.jpg",
+        image: "./images/bouquet1.jpg",
         description: "composition of white and pink roses, yellow carnations, white daisies",
         symbolism: "A gift that leaves a lasting impression.",
         price: 35.99,
@@ -68,7 +68,7 @@ const flowers = [{
     },
     {
         name: "Bouquet modern",
-        image: "/images/bouquet2.jpg",
+        image: "./images/bouquet2.jpg",
         description: "composition of thea and white roses, leaves and berries",
         symbolism: "modern composition for any occasion.",
         price: 45.99,
