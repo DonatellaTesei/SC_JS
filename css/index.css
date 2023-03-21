@@ -126,9 +126,10 @@ nav {
     align-items: center;
 }
 
-#form input {
+
+/* #form input {
     width: 184%;
-}
+} */
 
 a {
     color: black;
@@ -240,6 +241,9 @@ form {
     .name {
         margin-right: 1rem;
     }
+    #form input {
+        width: 168%;
+    }
 }
 
 @media screen and (min-width: 577px) and (max-width: 767px) {
@@ -261,19 +265,35 @@ form {
         width: 6vw !important;
         height: 7vh !important;
     }
+    .name,
+    .price {
+        font-size: 0.8rem !important;
+    }
+    .name {
+        margin-right: 1rem;
+    }
+    #form input {
+        width: 168%;
+    }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1200px) {
     #img {
-        width: 8vw !important;
+        width: 7vw !important;
         height: 8vh !important;
+    }
+    #form input {
+        width: 168%;
     }
 }
 
 @media screen and (min-width: 1201px) and (max-width: 2000px) {
     #img {
-        width: 8vw !important;
+        width: 6vw !important;
         height: 7vh !important;
+    }
+    #form input {
+        width: 168%;
     }
 }
 

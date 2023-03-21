@@ -421,7 +421,8 @@ function display() {
         document.getElementById("basket").style.display = "inline";
         document.getElementById("check-out").style.backgroundColor = "whitesmoke";
         document.getElementById("check-out").style.borderRadius = "1em";
-        document.getElementById("check-out").style.width = "25rem";
+        document.getElementById("check-out").style.width = "23rem";
+        document.getElementById("check-out").style.margin = "auto";
 
     }
 }
