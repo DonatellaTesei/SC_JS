@@ -206,7 +206,7 @@ function createCartInHTML() {
 <span id="err"></span>`
 
 
-    document.getElementById("back").innerHTML = `<a href="index.html"><i class="bi bi-arrow-left-short"></i> Back to shop</a>`
+    document.getElementById("back").innerHTML = `<a href="./index.html"><i class="bi bi-arrow-left-short"></i> Back to shop</a>`
 
     document.getElementById("cart").innerHTML = "";
     for (let val of cart) {
