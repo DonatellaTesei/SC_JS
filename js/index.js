@@ -323,10 +323,10 @@ function total() {
 
     // checks if the coupon is valid and the order value is above 100
     if (coupon && total >= 100) {
-        discount = 10; // €10 discount
+        discount = 20; // €10 discount
 
         discountedTotal = Math.floor(total - discount);
-        document.getElementById("discount").innerHTML = `- €10 on orders above €100`;
+        document.getElementById("discount").innerHTML = `- €20 on orders above €100`;
         document.getElementById("subtotal").innerHTML = `<b>DISCOUNTED TOTAL: &nbsp&nbsp&nbsp€ ${discountedTotal.toFixed(2)}</b> `
     } else if (total >= 69 && total <= 99.99) {
         discount = total - (total * 0.9);
