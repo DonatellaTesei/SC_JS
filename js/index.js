@@ -339,8 +339,9 @@ function validate(coupon) {
         return false;
 
     }
+    total()
 }
-total()
+
 
 
 //this function displays the total price and a discount above 69€, if applicable
@@ -439,6 +440,7 @@ button.style.display = "none";
 
 // shows/hides the button as the user scrolls
 window.onscroll = function() {
+    console.log(document.body.scrollTop, document.documentElement.scrollTop);
     if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
         button.style.display = "block";
     } else {
