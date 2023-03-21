@@ -226,6 +226,17 @@ function createCartInHTML() {
 <div class="delete align-items-left text-center" style="color:black;"><i class="bi bi-x-circle"></i></div>
 <hr>
 `;
+
+        //EventListener added to the "Apply" button. 
+        //If the coupon is valid, it will call the "total" function to update the total price.
+
+        document.getElementById('btn-code').addEventListener('click', function() {
+            let couponCode = document.getElementById('in').value;
+            if (validate(couponCode)) {
+                total();
+            }
+        });
+
     }
 
 
@@ -304,6 +315,34 @@ function validateForm(event) {
 }
 
 
+
+//coupon validation
+function validate(coupon) {
+    var myRe = "LUCKY100";
+    var coupon = myRe.trim();
+    var input = document.getElementById('in').value;
+
+    if (input.toUpperCase() == coupon.toUpperCase()) {
+        document.getElementById('message').innerHTML = "Coupon applied!";
+        document.getElementById('err').innerHTML = "";
+        return true;
+    } else {
+
+        // check if the coupon is already applied to the total
+        var discountedTotal = document.getElementById('subtotal').textContent;
+        if (discountedTotal.indexOf('- €20') >= 0) {
+            document.getElementById('err').innerHTML = "Coupon already applied!";
+        } else {
+            document.getElementById('err').innerHTML = "Invalid coupon";
+        }
+        document.getElementById('message').innerHTML = "";
+        return false;
+
+    }
+}
+total()
+
+
 //this function displays the total price and a discount above 69€, if applicable
 //a €10 discount is calculated if the coupon "LUCKY100" is applied
 function total() {
@@ -314,6 +353,8 @@ function total() {
     let myRe = 'LUCKY100';
     let input = document.getElementById('in').value;
     let coupon = input.toUpperCase() === myRe.toUpperCase();
+    let couponApplied = false;
+
     for (let val of cart) {
         total = total + (val.price * val.qtty) + shipping;
     }
@@ -322,23 +363,21 @@ function total() {
     document.getElementById("total").innerHTML = `<b>TOTAL PRICE</b> <small style=" font-size: 1rem;">(including shipping)</small>: &nbsp&nbsp&nbsp<b> €${total.toFixed(2)}</b>`;
 
     // checks if the coupon is valid and the order value is above 100
-    if (coupon && total >= 100) {
-        discount = 20; // €10 discount
+    if (coupon && total >= 100 && !couponApplied) {
+        discount = 20; // €20 discount
 
         discountedTotal = (total - discount);
         document.getElementById("discount").innerHTML = `- €20 on orders above €100`;
         document.getElementById("subtotal").innerHTML = `<b>DISCOUNTED TOTAL: &nbsp&nbsp&nbsp€ ${discountedTotal.toFixed(2)}</b> `
-    } else if (total >= 69 && total <= 99.99) {
+
+    } else if (coupon && total >= 69 && total <= 99.99 && !couponApplied) {
         discount = total - (total * 0.9);
         discountedTotal = Math.floor(total - [(total * 10) / 100]);
         document.getElementById("discount").innerHTML = `DISCOUNT &nbsp(10% on orders above € 69): &nbsp&nbsp&nbsp - € ${discount.toFixed(2)} `;
         document.getElementById("subtotal").innerHTML = `<b>DISCOUNTED TOTAL: &nbsp&nbsp&nbsp€ ${discountedTotal.toFixed(2)}</b> `
 
-    } else if (total == 0) {
-        discount = total - (total * 0.9);
-        discountedTotal = Math.floor(total - [(total * 10) / 100]);
-        document.getElementById("discount").innerHTML = `DISCOUNT &nbsp(10% on orders above € 25): &nbsp&nbsp&nbsp - € ${discount.toFixed(2)} `;
-        document.getElementById("subtotal").innerHTML = `<b>DISCOUNTED TOTAL: &nbsp&nbsp&nbsp€ ${discountedTotal.toFixed(2)}</b> `;
+    } else if (total == 0 && !couponApplied) {
+
         document.getElementById("basket").style.display = "none";
         document.getElementById("check-out").style.display = "none";
         document.getElementById("summary").style.display = "none";
@@ -352,30 +391,13 @@ function total() {
 
     } else { //no discounts and no message below 69€
         discountedTotal = total;
+        discount = 0;
         document.getElementById("discount").innerHTML = "";
         document.getElementById("subtotal").innerHTML = `<b>TOTAL: &nbsp&nbsp&nbsp€ ${discountedTotal.toFixed(2)}</b>`;
 
     }
 
 }
-
-//coupon validation
-function validate(coupon) {
-    var myRe = "LUCKY100";
-    var coupon = myRe.trim();
-    var input = document.getElementById('in').value;
-
-    if (input.toUpperCase() == coupon.toUpperCase()) {
-        document.getElementById('message').innerHTML = "Coupon applied!";
-        document.getElementById('err').innerHTML = "";
-        return true;
-    } else {
-        document.getElementById('err').innerHTML = "Invalid coupon";
-        document.getElementById('message').innerHTML = "";
-        return false;
-    }
-}
-total()
 
 
 //this function displays the count of total items in the cart
