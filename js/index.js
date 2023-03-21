@@ -374,7 +374,7 @@ function total() {
     } else if (coupon && total >= 69 && total <= 99.99 && !couponApplied) {
         discount = total - (total * 0.9);
         discountedTotal = Math.floor(total - [(total * 10) / 100]);
-        document.getElementById("discount").innerHTML = `DISCOUNT &nbsp(10% on orders above € 69): &nbsp&nbsp&nbsp - € ${discount.toFixed(2)} `;
+        document.getElementById("discount").innerHTML = `DISCOUNT &nbsp(10% on orders above € 69): &nbsp&nbsp&nbsp <br> - € ${discount.toFixed(2)} `;
         document.getElementById("subtotal").innerHTML = `<b>DISCOUNTED TOTAL: &nbsp&nbsp&nbsp€ ${discountedTotal.toFixed(2)}</b> `
 
     } else if (total == 0 && !couponApplied) {
