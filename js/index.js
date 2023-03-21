@@ -218,7 +218,7 @@ function createCartInHTML() {
 <p class="img img-fluid align-items-center mt-3 id="img"><img src="${val.image}" style="border-radius:10%;width:8vw; height:8vh;" id="img"
 ></p>
 <p class="name" style="text-align:left; font-size:1rem; width:10%;" > ${val.name} </p>
-<p class="price" style="text-align:left; font-size:1rem;">€ ${val.price.toFixed(2)} </p>
+<p class="price" style="text-align:left; font-size:1rem;;width:12%;">€ ${val.price.toFixed(2)} </p>
 <div class="quantity">
 <p class="plus" style="text-align:left;"><i class="fa-solid fa-plus"></i></p>
 <div class="qtty align-items-center text-center">${val.qtty}</div>

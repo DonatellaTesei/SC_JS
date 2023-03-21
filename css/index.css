@@ -228,24 +228,52 @@ form {
 
 /* media query */
 
-@media screen and (min-width: 768px) and (max-width: 992px) {
+@media screen and (max-width: 576px) {
+    #img {
+        width: 8vw !important;
+        height: 4vh !important;
+    }
+    .name,
+    .price {
+        font-size: 0.8rem !important;
+    }
+    .name {
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 767px) {
     #img {
         width: 8vw !important;
         height: 10vh !important;
+    }
+    .name,
+    .price {
+        font-size: 0.8rem !important;
+    }
+    .name {
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    #img {
+        width: 6vw !important;
+        height: 7vh !important;
     }
 }
 
 @media screen and (min-width: 992px) and (max-width: 1200px) {
     #img {
         width: 8vw !important;
-        height: 10vh !important;
+        height: 8vh !important;
     }
 }
 
 @media screen and (min-width: 1201px) and (max-width: 2000px) {
     #img {
-        width: 6vw !important;
-        height: 10vh !important;
+        width: 8vw !important;
+        height: 7vh !important;
     }
 }
 
